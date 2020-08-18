@@ -12,7 +12,7 @@ namespace CareerCloud.Pocos
         [Key]
         public Guid Id { get; set; }
         public Guid Company { get; set; }
-
+        
         [Column("Profile_Created")]
         public DateTime ProfileCreated { get; set; }
 
@@ -23,6 +23,18 @@ namespace CareerCloud.Pocos
         public Boolean IsCompanyHidden { get; set; }
 
         [Column("Time_Stamp")]
+        [Timestamp]
         public Byte[] TimeStamp { get; set; }
+
+        [ForeignKey ("Job")]
+        public virtual ICollection<ApplicantJobApplicationPoco> ApplicantJobApplications { get; set; }
+  
+       
+        [ForeignKey("Job")]
+        public virtual ICollection<CompanyJobSkillPoco> CompanyJobSkills { get; set; }
+
+   
+
+
     }
 }

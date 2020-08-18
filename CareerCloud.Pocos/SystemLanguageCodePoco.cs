@@ -14,5 +14,9 @@ namespace CareerCloud.Pocos
         public string Name { get; set; }
         [Column("Native_Name")]
         public string NativeName { get; set; }
+
+        // [ForeignKey("LanguageID")]
+          public ICollection<CompanyDescriptionPoco> CompanyDescription { get; set; }
+
     }
 }

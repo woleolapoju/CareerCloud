@@ -11,7 +11,6 @@ namespace CareerCloud.Pocos
     {
         [Key]
         public Guid Id { get; set; }
-      
 
         [Column("Registration_Date")]
         public DateTime RegistrationDate { get; set; }
@@ -30,6 +29,14 @@ namespace CareerCloud.Pocos
 
 
         [Column("Time_Stamp")]
+        [Timestamp]
         public Byte[] TimeStamp { get; set; }
+
+        [ForeignKey("Company")]
+        public virtual ICollection<CompanyDescriptionPoco> CompanyDescriptions { get; set; }
+        [ForeignKey("Company")]
+        public virtual ICollection<CompanyJobPoco> CompanyJobs { get; set; }
+        [ForeignKey("Company")]
+        public virtual ICollection<CompanyLocationPoco> CompanyLocations { get; set; }
     }
 }

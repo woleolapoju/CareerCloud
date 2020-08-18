@@ -22,7 +22,8 @@ namespace CareerCloud.Pocos
         [Column("Is_Succesful")]
         public Boolean IsSuccesful { get; set; }
 
-
+        [ForeignKey("Id")]
+        public virtual SecurityLoginPoco SecurityLogin { get; set; }
 
     }
 }

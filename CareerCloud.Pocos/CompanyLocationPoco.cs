@@ -31,6 +31,7 @@ namespace CareerCloud.Pocos
 
 
         [Column("Time_Stamp")]
+        [Timestamp]
         public Byte[] TimeStamp { get; set; }
     }
 }

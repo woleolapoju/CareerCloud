@@ -7,7 +7,6 @@ using System.Text;
 namespace CareerCloud.Pocos
 {
     [Table("Applicant_Profiles")]
-
    public class ApplicantProfilePoco :IPoco
     {
         [Key]
@@ -21,6 +20,7 @@ namespace CareerCloud.Pocos
 
         public String Currency { get; set; }
 
+        //[ForeignKey("Country_Code")]
         [Column("Country_Code")]
         public String Country { get; set; }
 
@@ -38,6 +38,11 @@ namespace CareerCloud.Pocos
 
 
         [Column("Time_Stamp")]
+        [Timestamp]
         public Byte[] TimeStamp { get; set; }
+
+        //[ForeignKey("Code")]
+       public virtual SystemCountryCodePoco SystemCountryCode { get; set; }
+
     }
 }
