@@ -3,7 +3,6 @@ using CareerCloud.Pocos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CareerCloud.BusinessLogicLayer
 {
@@ -29,7 +28,6 @@ namespace CareerCloud.BusinessLogicLayer
 		{
 			return _repository.GetAll().ToList();
 		}
-
 		public virtual void Add(TPoco[] pocos)
 		{
 			foreach (TPoco poco in pocos)
