@@ -26,9 +26,11 @@ namespace CareerCloud.BusinessLogicLayer
 
 				if (string.IsNullOrEmpty(poco.CompanyWebsite))
 					exceptions.Add(new ValidationException(600, "Valid websites must end with the following extensions – .ca, .com, .biz"));
-				else if(! (poco.CompanyWebsite == "*.ca" || poco.CompanyWebsite == "*.com" || poco.CompanyWebsite == "*.biz"))
+			//	else if(! (poco.CompanyWebsite == "*.ca" || poco.CompanyWebsite == "*.com" || poco.CompanyWebsite == "*.biz"))
+				else if (!(poco.CompanyWebsite.EndsWith(".ca") || poco.CompanyWebsite.EndsWith(".com") || poco.CompanyWebsite.EndsWith(".biz")))
+
 				{
-					exceptions.Add(new ValidationException(600, "Valid websites must end with the following extensions – .ca, .com, .biz"));
+							exceptions.Add(new ValidationException(600, "Valid websites must end with the following extensions – .ca, .com, .biz"));
 				}
 
 				if (string.IsNullOrEmpty(poco.ContactPhone))

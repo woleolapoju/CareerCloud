@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CareerCloud.BusinessLogicLayer
 {
-    class SecurityLoginsRoleLogic : BaseLogic<SecurityLoginsRolePoco>
+ public   class SecurityLoginsRoleLogic : BaseLogic<SecurityLoginsRolePoco>
     {
         public SecurityLoginsRoleLogic(IDataRepository<SecurityLoginsRolePoco> repository) : base(repository)
         {
