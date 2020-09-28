@@ -17,19 +17,19 @@ namespace CareerCloud.WebAPI.Controllers
             _logic = new ApplicantEducationLogic(repo);
         }
 
-
         [HttpGet]
         [Route("education/{id}")]
         [ProducesResponseType(typeof(ApplicantEducationPoco),200)]
         public ActionResult GetApplicantEducation(Guid id)
         {
-            ApplicantEducationPoco poco = _logic.Get(id);
-            if (poco == null)
-                return NotFound();
-            else
-            {
-                return Ok(poco);
-            }
+              ApplicantEducationPoco poco = _logic.Get((Guid)id);
+                if (poco == null)
+                    return NotFound();
+                else
+                {
+                    return Ok(poco);
+                }
+           
         }
 
         [HttpGet]

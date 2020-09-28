@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "CareerCloud.gRPC.Protos";
+
+
+service CompanyProfile {
+	rpc GetCompanyProfile(IdRequestCompanyProfile) returns (CompanyProfilereply);
+}
+message IdRequestCompanyProfile {
+	string Id=1;
+}
+message CompanyProfilereply {
+		string Id=1;
+        google.protobuf.Timestamp RegistrationDate =2;
+		string CompanyWebsite=3;
+		string ContactPhone=4;
+		string ContactName=5;
+        bytes CompanyLogo=6; 
+		bytes TimeStamp=7;
+}
+
+

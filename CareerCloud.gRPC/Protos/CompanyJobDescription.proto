@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "CareerCloud.gRPC.Protos";
+
+
+service CompanyJobDescription {
+	rpc GetCompanyJobDescription(IdRequestCompanyJobDescription) returns (CompanyJobDescriptionreply);
+}
+message IdRequestCompanyJobDescription {
+	string Id=1;
+}
+message CompanyJobDescriptionreply {
+		string Id=1;
+		string Job=2;
+		string JobName=3;
+		string JobDescriptions=4;
+		bytes TimeStamp=5;
+}

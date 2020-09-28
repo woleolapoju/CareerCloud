@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "CareerCloud.gRPC.Protos";
+
+service CompanyJobSkill{
+	rpc GetCompanyJobSkill(IdRequestCompanyJobSkill) returns (CompanyJobSkillreply);
+}
+message IdRequestCompanyJobSkill {
+	string Id=1;
+}
+message CompanyJobSkillreply {
+		string Id=1;
+		string Job=2;
+        string Skill=3;
+        string SkillLevel=4;
+        int32 Importance=5;
+		bytes TimeStamp=6;
+}

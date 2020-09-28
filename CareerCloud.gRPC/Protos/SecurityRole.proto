@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "CareerCloud.gRPC.Protos";
+
+service SecurityRole {
+	rpc GetSecurityRole(IdRequestSecurityRole) returns (SecurityRolereply);
+}
+message IdRequestSecurityRole {
+	string Id=1;
+}
+message SecurityRolereply {
+		string Id=1;
+		string Role=2;
+		string Password=3;
+       bool IsInactive=4;
+
+}

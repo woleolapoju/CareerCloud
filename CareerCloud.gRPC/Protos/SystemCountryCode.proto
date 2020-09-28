@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "CareerCloud.gRPC.Protos";
+
+service SystemCountryCode {
+	rpc GetSystemCountryCode(CodeRequest) returns (SystemCountryCodereply);
+}
+message CodeRequest {
+	string Code=1;
+}
+message SystemCountryCodereply {
+		string Code=1;
+		string Name=2;
+
+}
